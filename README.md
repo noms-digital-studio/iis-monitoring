@@ -1,8 +1,8 @@
-Hub Monitoring
+IIS Monitoring
 ====
-Monitoring for the HUB, this use smashing which is forked from Dashing, as Dashing is no longer being maintained.
+Monitoring for the IIS project.
 
-Currently only setup to monitor CircleCI builds, and Health.
+The project is based on Smashing.
 
 Build
 ----
@@ -20,12 +20,10 @@ smashing start
 Local
 ----
 http://localhost:3030/circle
-http://localhost:3030/health
 
 Heroku
 ----
-https://hub-monitor.herokuapp.com/circle
-https://hub-monitor.herokuapp.com/health
+https://iis-monitoring.herokuapp.com/circle
 
 
 Further Reading on Smashing
