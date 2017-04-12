@@ -31,3 +31,10 @@ https://iis-monitoring.herokuapp.com/health - Server Status
 Further Reading on Smashing
 ----
 Check out http://smashing.github.io/ for more information.
+
+Configuration
+---
+
+Requires the following environment variables
+
+ * CIRCLE_CI_TOKEN - a valid circle API access token
