@@ -32,9 +32,17 @@ Further Reading on Smashing
 ----
 Check out http://smashing.github.io/ for more information.
 
-Configuration
----
+Deployment Configuration
+----
 
 Requires the following environment variables
 
  * CIRCLE_CI_TOKEN - a valid circle API access token
+ 
+Dashboard Configuration
+----
+
+1. Edit dashboards/circle.erb to add projects to the build monitor
+2. Edit dashboards/health.erb to add projects to the health monitor
+3. Edit the projects element in jobs/circle_ci.rb to match your changes in circle.erb
+4. Edit the projects element in jobs/health.rb to match your changes in health.erb
