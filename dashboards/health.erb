@@ -1,0 +1,27 @@
+<script type='text/javascript'>
+$(function() {
+  Dashing.widget_base_dimensions = [400, 400]
+  Dashing.numColumns = 4
+});
+</script>
+
+<% content_for :title do %>Health<% end %>
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="Health" data-view="Text" data-title="Health Board"></div>
+        </li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="hub admin ui" data-view="ServerStatusSquares" data-title="Hub Admin UI"></div>
+        </li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="hub admin" data-view="ServerStatusSquares" data-title="Hub Admin"></div>
+        </li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="hub content feed" data-view="ServerStatusSquares" data-title="Hub Content Feed"></div>
+        </li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="hub content feed ui" data-view="ServerStatusSquares" data-title="Hub Content Feed UI"></div>
+        </li>
+    </ul>
+</div>
