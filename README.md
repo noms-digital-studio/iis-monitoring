@@ -19,11 +19,13 @@ smashing start
 
 Local
 ----
-http://localhost:3030/circle
+http://localhost:3030/circle - Build Status
+http://localhost:3030/health - Server Status
 
 Heroku
 ----
-https://iis-monitoring.herokuapp.com/circle
+https://iis-monitoring.herokuapp.com/circle - Build Status
+https://iis-monitoring.herokuapp.com/health - Server Status
 
 
 Further Reading on Smashing

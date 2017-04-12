@@ -2,11 +2,8 @@ require 'httparty'
 # require 'digest/md5'
 
 projects = [
-  { user: 'noms-digital-studio', repo: 'hub-content-feed'},
-  { user: 'noms-digital-studio', repo: 'hub-admin'},
-  { user: 'noms-digital-studio', repo: 'hub-admin-ui'},
-  { user: 'noms-digital-studio', repo: 'hub-smoke-tests'},
-  { user: 'noms-digital-studio', repo: 'hub-feature-specs'},
+  { user: 'noms-digital-studio', repo: 'iis', branch: 'master'},
+  { user: 'noms-digital-studio', repo: 'iis-feature-specs', branch: 'master'}
 ]
 
 def duration(time)
@@ -41,8 +38,8 @@ def translate_status_to_class(status)
 end
 
 def build_data(project, auth_token)
-  api_url = 'https://circleci.com/api/v1.1/project/github/%s/%s?circle-token=%s&limit=1'
-  api_url = api_url % [project[:user], project[:repo], auth_token]
+  api_url = 'https://circleci.com/api/v1.1/project/github/%s/%s/tree/%s?circle-token=%s&limit=1'
+  api_url = api_url % [project[:user], project[:repo], project[:branch], auth_token]
   api_response =  HTTParty.get(api_url, :headers => { "Accept" => "application/json" } )
   api_json = JSON.parse(api_response.body)
   return {} if api_json.empty?
@@ -67,7 +64,7 @@ end
 
 SCHEDULER.every '10s', :first_in => 0  do
   projects.each do |project|
-    data_id = "circle-ci-#{project[:user]}-#{project[:repo]}"
+    data_id = "circle-ci-#{project[:user]}-#{project[:repo]}-#{project[:branch]}"
     data = build_data(project, ENV['CIRCLE_CI_TOKEN'])
     send_event(data_id, data) unless data.empty?
   end
