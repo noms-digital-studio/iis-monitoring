@@ -33,7 +33,7 @@ servers = [
     {name: 'hpa prod', url: 'https://hpa.service.hmpps.dsd.io/health', method: 'http'}
 ]
  
-SCHEDULER.every '15s', :first_in => 0 do |job|
+SCHEDULER.every '60s', :first_in => 0 do |job|
     basic_auth = ENV['BASIC_AUTH']
 
     servers.each do |server|
