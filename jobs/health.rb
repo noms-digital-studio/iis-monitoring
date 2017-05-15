@@ -29,8 +29,8 @@ ping_count = 10
 #      the check will return false
 #
 servers = [
-    {name: 'hpa stage', url: 'https://hpa-stage.noms.dsd.io/health', method: 'http'},
-    {name: 'hpa prod', url: 'https://hpa.service.hmpps.dsd.io/health', method: 'http'}
+    {name: 'hpa stage', url: 'https://hpa-stage.noms.dsd.io/health', method: 'http'}
+    #{name: 'hpa prod', url: 'https://hpa.service.hmpps.dsd.io/health', method: 'http'}
 ]
  
 SCHEDULER.every '60s', :first_in => 0 do |job|
