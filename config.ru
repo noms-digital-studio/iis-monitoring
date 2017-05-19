@@ -1,7 +1,7 @@
 require 'dashing'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :auth_token, ENV.fetch('AUTH_TOKEN', 'YOUR_AUTH_TOKEN')
   set :default_dashboard, 'overview'
   helpers do
     def protected!
