@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'net/http'
 require 'uri'
- 
+
 #
 ### Global Config
 #
@@ -11,8 +11,8 @@ require 'uri'
 httptimeout = 60
 ping_count = 10
 
-# 
-# Check whether a server is Responding you can set a server to 
+#
+# Check whether a server is Responding you can set a server to
 # check via http request or ping
 #
 # Server Options
@@ -25,14 +25,14 @@ ping_count = 10
 #       => ping
 #
 # Notes:
-#   => If the server you're checking redirects (from http to https for example) 
+#   => If the server you're checking redirects (from http to https for example)
 #      the check will return false
 #
 servers = [
-    {name: 'hpa stage', url: 'https://hpa-stage.noms.dsd.io/health', method: 'http'}
-    #{name: 'hpa prod', url: 'https://hpa.service.hmpps.dsd.io/health', method: 'http'}
+    {name: 'hpa stage', url: 'https://hpa-stage.noms.dsd.io/health', method: 'http'},
+    {name: 'hpa prod', url: 'http://health-kick.hmpps.dsd.io/https/hpa.service.hmpps.dsd.io', method: 'http'}
 ]
- 
+
 SCHEDULER.every '60s', :first_in => 0 do |job|
     basic_auth = ENV['BASIC_AUTH']
 
