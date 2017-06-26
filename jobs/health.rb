@@ -29,7 +29,7 @@ ping_count = 10
 #      the check will return false
 #
 servers = [
-    {name: 'hpa stage', url: 'https://hpa-stage.noms.dsd.io/health', method: 'http'},
+    {name: 'hpa stage', url: 'https://hpa-stage.hmpps.dsd.io/health', method: 'http'},
     {name: 'hpa prod', url: 'http://health-kick.hmpps.dsd.io/https/hpa.service.hmpps.dsd.io', method: 'http'}
 ]
 
