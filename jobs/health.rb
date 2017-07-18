@@ -30,6 +30,7 @@ ping_count = 10
 #
 servers = [
     {name: 'hpa stage', url: 'https://hpa-stage.hmpps.dsd.io/health', method: 'http'},
+    {name: 'hpa pre-prod', url: 'https://hpa-preprod.service.hmpps.dsd.io/health', method: 'http'},
     {name: 'hpa prod', url: 'http://health-kick.hmpps.dsd.io/https/hpa.service.hmpps.dsd.io', method: 'http'}
 ]
 

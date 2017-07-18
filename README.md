@@ -19,7 +19,10 @@ smashing start
 
 Local
 ----
-http://localhost:3030/circle
+* Overview - http://localhost:3030/
+* CI status - http://localhost:3030/circle
+* Server health - http://localhost:3030/health
+* Activity - http://localhost:3030/stats
 
 
 Heroku
